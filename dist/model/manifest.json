@@ -1,0 +1,30 @@
+{
+  "source": "User supplied OBJ",
+  "full": {
+    "vertices": 863144,
+    "triangles": 1499482
+  },
+  "preview": {
+    "vertices": 160176,
+    "triangles": 180000,
+    "error": 0.00020242527534719557
+  },
+  "cloth": {
+    "vertices": 25616,
+    "triangles": 35000,
+    "error": 0.0007320991135202348
+  },
+  "bounds": {
+    "min": [
+      -0.317652,
+      0,
+      -0.226085
+    ],
+    "max": [
+      0.307302,
+      1.073938,
+      0.195629
+    ]
+  },
+  "note": "Original vertex positions retained. Preview and cloth use subsets of original surface vertices; no anatomical reshaping."
+}
