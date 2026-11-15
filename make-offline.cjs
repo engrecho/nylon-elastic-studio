@@ -8,7 +8,7 @@ const entries=match[1].split(',').map(s=>{const a=s.trim().split(/\s+as\s+/);ret
 lib=lib.slice(0,match.index);
 const handData='data:image/webp;base64,'+fs.readFileSync(path.join(dir,'hand.webp')).toString('base64');
 const hand=fs.readFileSync(path.join(dir,'hand.js'),'utf8').replace('export function','function').replace("'hand.webp'",JSON.stringify(handData));
-const modules=['model-loader.js','cloth-physics.js'].map(n=>fs.readFileSync(path.join(dir,n),'utf8').replace(/^\uFEFF?import[^\n]+\n/gm,'').replace(/^export /gm,'')).join('\n');
+const modules=['model-loader.js','skin-collider.js','cloth-physics.js','garment-layers.js','layer-materials.js'].map(n=>fs.readFileSync(path.join(dir,n),'utf8').replace(/^\uFEFF?import[^\n]+\n/gm,'').replace(/^export /gm,'')).join('\n');
 let app=hand+'\n'+modules+'\n'+fs.readFileSync(path.join(dir,'app.js'),'utf8').replace(/^\uFEFF?import[^\n]+\n/gm,'');
 let css=fs.readFileSync(path.join(dir,'style.css'),'utf8').replace(/@import[^;]+;/,'');
 let html=fs.readFileSync(path.join(dir,'index.html'),'utf8').replace('<link rel="stylesheet" href="style.css">',()=>'<style>'+css+'</style>');
